@@ -1,0 +1,324 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f9;
+    margin:0;
+    padding: 0;
+}
+
+
+#grad{
+	
+background-image: linear-gradient(to right top, #3f72af, #6086bb, #7e9ac7, #9aafd3, #b6c5df, #c9cfe5, #dadaea, #e8e6f0, #efeaf1, #f4eef1, #f7f2f3, #f9f7f7);}
+/* Navbar Styling */
+.navbar {
+	position:fixed;
+	top:0;
+    background-color: #112D4E;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    position: sticky;
+    top:0px;
+        z-index:9999;
+}
+
+.navbar .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar .navbar-brand span:hover:hover {
+    color: #f1c40f; /* Golden accent color on hover */
+    
+}
+
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 16px;
+    margin-right: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f1c40f;
+    background-color: #34495e;
+    border-radius: 4px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    margin-left:50px
+}
+
+
+.space{
+
+}
+
+/* Image Carousel */
+.carousel-container {
+    flex: 1;
+    margin-right: 20px;
+    max-width: 65%;
+    box-shadow: 10px 10px 5px 12px #DBE2EF;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Quick Links */
+.quick-links-container {
+	
+    flex: 2;
+    max-width: 30%;
+    background-color: transpersnt;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left:80px;
+}
+
+.quick-links h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.list-group-item {
+    background-color: #DBE2EF;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.list-group-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* News Section */
+.news-slider {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    overflow: hidden;
+    height: 200px; /* Adjust height as needed */
+}
+
+.news-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    animation: slideUpDown 10s infinite alternate;
+}
+
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(-100);
+    }
+    50% {
+        transform: translateY(-200px); /* Adjust to match slider height */
+    }
+    100% {
+        transform: translateY(100);
+    }
+}
+/* Event Calendar */
+.calendar-table {
+    width: 50%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.calendar-table th {
+    background-color: #f1c40f;
+    color: #fff;
+    font-size: 16px;
+}
+
+.calendar-table td {
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-table td:hover {
+    background-color: #f1c40f;
+    color: #fff;
+}
+
+/* Modal Backdrop for better aesthetics */
+.modal-backdrop.show {
+    opacity: 0.7 !important;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .carousel-container,
+    .quick-links-container {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .news-section,
+    .calendar-section {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+	
+}
+
+/* General Styling for the Company Slider */
+.company-slider-wrapper {
+    margin-top: 30px;
+}
+
+.company-slider {
+    overflow: hidden;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.company-slider-container {
+    display: flex;
+    gap: 30px;
+    animation: continuous-scroll 15s linear infinite;
+}
+
+.company-item img {
+    max-width: 120px;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* Continuous Scrolling Animation */
+@keyframes continuous-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.company-slider-container:hover {
+    animation-play-state: paused;
+}
+
+/* General Styling for Alumni and Feedback Sliders */
+.alumni-slider-wrapper, .feedback-slider-wrapper {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.alumni-slider, .feedback-slider {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.alumni-slider-container, .feedback-slider-container {
+    display: flex;
+    gap: 30px;
+    animation: seamless-scroll 20s linear infinite;
+}
+
+.alumni-item, .feedback-item {
+    flex-shrink: 0;
+    max-width: 150px;
+    text-align: center;
+}
+
+.alumni-item img, .feedback-item img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.alumni-item p, .feedback-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.feedback-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feedback-author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Continuous Scrolling Animation for Alumni and Feedback */
+@keyframes seamless-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+.alumni-slider-container:hover, .feedback-slider-container:hover {
+    animation-play-state: paused;
+}
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+	margin-top: 20px;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #17a2b8;
+}
+
+.footer .social-icons i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}

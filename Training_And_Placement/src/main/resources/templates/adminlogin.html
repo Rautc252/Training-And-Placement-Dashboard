@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+   
+    <title>Home Page</title>
+
+</head>
+
+<body>
+    <h2>Admin Login Page..!!</h2>
+	
+	<div th:if="${error}">
+			<h3 style=color:red; th:text="${error}"></h3>
+		</div>
+	    
+		<form th:action="@{/adminform}" th:object="${admin}" method="post">
+			Enter E-Mail Id :- <input type="text" th:field="*{username}" required><br><br>
+			password :- <input type="password" th:field="*{password}" required><br><br>
+			<input type="submit" value="submit">
+			<input type="reset" value="cancel">
+		</form>
+	    
+		
+</body>
+
+</html>

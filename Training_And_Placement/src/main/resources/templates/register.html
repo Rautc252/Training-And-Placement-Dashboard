@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Student Register</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/studentregistration.css">
+    
+</head>
+
+<body>
+	
+	<!-- Navbar -->
+	   <div class="navbar">
+	       <div class="logo">Student Portal</div>
+	       <ul class="nav-links">
+	           <li><a href="#">Home</a></li>
+	           <li><a href="#">About</a></li>
+	           <li><a href="#">Features</a></li>
+	           <li><a href="#">Contact</a></li>
+	       </ul>
+	   </div>
+	
+		
+		<div th:if="${success}" class="message-success">
+		    <h3 th:text="${success}"></h3>
+		</div>
+
+		<div th:if="${error}" class="message-error">
+		    <h3 th:text="${error}"></h3>
+		</div>
+
+		
+		<section class="registration-section">
+		        <div class="form-container">
+		            <h2>Register as a Student</h2>
+	<form th:action="@{'/registerform'}" th:object=${user} method="post">
+		<!--
+		User id:-<input type="text" th:field="*{id}" required><br><br>
+		Name:-<input type="text" th:field="*{name}" required><br><br>
+		User Name:-<input type="text" th:field="*{username}" required><br><br>
+		Password:-<input type="password" name="password" th:field="*{password}" required><br><br>
+
+		
+		<input type="submit" value="Submit">
+		<input type="reset" value="Cancel">
+	-->
+	
+	<div class="form-group">
+	                    <label for="full-name">Student Full Name</label>
+	                    <input type="text" id="full-name" th:field="*{name}" placeholder="Write your full name" required>
+	                </div>
+					<div class="form-group">
+	                    <label for="username">Student User Name</label>
+	                    <input type="text" id="username" th:field="*{username}" required>
+	                </div>
+					<div class="form-group">
+	                    <label for="id">Student Id</label>
+	                    <input type="number" id="id" th:field="*{id}" required>
+	                </div>
+	                <div class="form-group">
+	                    <label for="email">Email Address</label>
+	                    <input type="email" id="email" th:field="*{email}" placeholder="Format:name@example.com" required>
+	                </div>
+	                <div class="form-group">
+	                    <label for="dob">Date of Birth</label>
+	                    <input type="date" id="dob" th:field="*{dob}" placeholder="DD/MM/YYY" required>
+	                </div>
+					<div class="form-group">
+	                    <label for="contact">Student Contact</label>
+	                    <input type="number" id="contact" th:field="*{contact}" placeholder="0123456789" required>
+	                </div>
+					<div class="form-group">
+		                    <label for="address">Address</label>
+		                    <input type="text" id="address" th:field="*{address}" required>
+		                </div>
+						<div class="form-group">
+						                    <label for="course">Stream of Study</label>
+						                    <select id="course" th:field="*{field}">
+						                        <option value="computer-science">Computer Science</option>
+						                        <option value="Information-Technology">Information-Technology</option>
+						                        <option value="Electrical">Electrical</option>
+						                        <option value="Electronics And Communication">Electronics And Communication</option>
+						                    </select>
+						                </div>	
+	                <div class="form-group">
+	                    <label for="password">Password</label>
+	                    <input type="password" id="password" th:field="*{password}" placeholder="Enter Password" required>
+	                </div>
+	                <div class="form-group">
+	                    <label for="confirm-password">Confirm Password</label>
+	                    <input type="password" id="confirm-password" th:field="*{conformpassword}" placeholder="Re-enter Password" required>
+	                </div>
+	               
+	                <button type="submit" class="register-button">Register</button>
+					
+					
+	</form>
+	</div>
+	   </section>
+
+	   <!-- Footer -->
+	   <footer>
+	       <p>&copy; 2024 Student Portal | All Rights Reserved</p>
+	   </footer>
+
+	
+</body>
+</html>
